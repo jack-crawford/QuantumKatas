@@ -7,7 +7,7 @@ namespace QDemo1 {
     operation SayHello() : Unit {
         Message("Hello quantum world!");
 
-        Qubit2();
+        Mystery();
     }
     // operation MeetTheQubit() : Unit {
     //     use q = Qubit() {
@@ -18,16 +18,13 @@ namespace QDemo1 {
     //         Message($"bit = {bit}");
     //     }
     // }
-    operation Qubit2() : Unit {
+     operation Mystery() : Unit {
         use q = Qubit() {
-            Message("Qubit in state |0>");
-            DumpMachine();
             H(q);
-            DumpMachine();
+            let bit = M(q);
             H(q);
-            DumpMachine();
+            // DumpMachine();
             Reset(q);
-
         }
     }
 }
